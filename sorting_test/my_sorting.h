@@ -9,7 +9,7 @@ typedef std::vector<int> Arr;
 int bubble_sort(Arr &origin);
 int bubble_sort_paralled(Arr &origin);
 
-int insert_sort(Arr &origin);
+int insertion_sort(Arr &origin);
 
 int merge_sort(Arr &origin);
 int merge_sort_paralled(Arr &origin);

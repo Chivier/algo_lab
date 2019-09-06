@@ -1,5 +1,9 @@
 #include "my_sorting.h"
 
+// * Basic Bubble_Sort
+// * Input: Array origin
+// * Ouput: Whether the sort is done or not
+
 int bubble_sort(Arr &origin) {
     bool flag;
     if (origin.size() == 0)

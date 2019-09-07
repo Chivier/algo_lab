@@ -23,6 +23,10 @@ int bubble_sort(Arr &origin) {
     return 1;
 }
 
+// * Basic Insertion_Sort
+// * Input: Array origin
+// * Ouput: Whether the sort is done or not
+
 int insertion_sort(Arr &origin) {
     if (origin.size() == 0)
         return 0;

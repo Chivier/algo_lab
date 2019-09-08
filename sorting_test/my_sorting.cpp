@@ -43,9 +43,9 @@ int insertion_sort(Arr &origin) {
         ++j;
         *j = key;
 
-        for (auto test = origin.begin(); test < origin.end(); ++test)
-            std::cout << *test << " ";
-        std::cout << "\n";
+        // for (auto test = origin.begin(); test < origin.end(); ++test)
+        //     std::cout << *test << " ";
+        // std::cout << "\n";
     }
     return 1;
 }

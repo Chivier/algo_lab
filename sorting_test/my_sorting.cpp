@@ -33,14 +33,19 @@ int insertion_sort(Arr &origin) {
         return 0;
     for (auto i = origin.begin() + 1; i < origin.end(); ++i) {
         int key = *i;
-        for (auto j = i - 1; j >= origin.begin(); --j) {
+        auto j = i - 1;
+        for (; j >= origin.begin(); --j) {
             if (*j > key)
                 *(j + 1) = *j;
-            else {
-                *j = key;
+            else
                 break;
-            }
         }
+        ++j;
+        *j = key;
+
+        for (auto test = origin.begin(); test < origin.end(); ++test)
+            std::cout << *test << " ";
+        std::cout << "\n";
     }
     return 1;
 }

@@ -12,7 +12,7 @@ int bubble_sort(Arr &origin) {
 
     for (int i = 0; i < origin.size(); ++i) {
         flag = 1;
-        for (int j = i; j < origin.size() - 1; ++j) {
+        for (int j = 0; j < origin.size() - i - 1; ++j) {
             if (origin[j] > origin[j + 1]) {
                 flag = 0;
                 std::swap(origin[j], origin[j + 1]);

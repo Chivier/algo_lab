@@ -1,4 +1,5 @@
 #include "my_sorting.h"
+#include <omp.h>
 
 // * Basic Bubble_Sort
 // * Input: Array origin
@@ -41,5 +42,9 @@ int insertion_sort(Arr &origin) {
             }
         }
     }
+    return 1;
+}
+
+int bubble_sort_paralled(Arr &origin) {
     return 1;
 }

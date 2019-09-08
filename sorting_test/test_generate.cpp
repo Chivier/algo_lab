@@ -10,7 +10,23 @@ void Generate_small_case(Test_case &test) {
     test.generate_small_random();
 }
 
-void Generate_case(Test_case &test) {
+void Generate_case(Test_case &test, const int mod) {
+    switch (mod) {
+    case 1:
+        test.update_size(TEST_SIZE1);
+        break;
+
+    case 2:
+        test.update_size(TEST_SIZE2);
+        break;
+
+    case 3:
+        test.update_size(TEST_SIZE3);
+        break;
+
+    default:
+        break;
+    }
     test.update_size(TEST_SIZE1);
     test.generate_random();
 }

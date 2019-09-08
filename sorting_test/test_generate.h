@@ -62,4 +62,4 @@ public:
 };
 
 void Generate_small_case(Test_case &test);
-void Generate_case(Test_case &test);
+void Generate_case(Test_case &test, const int mod);

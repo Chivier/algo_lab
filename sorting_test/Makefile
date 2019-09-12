@@ -1,7 +1,7 @@
-# CC=icpc
-# CCFLAGS =-fopenmp -O3 -std=c++17 -g -pthread -qopenmp
-CC = g++
-CCFLAGS = -O3 -g -fopenmp
+CC=icpc
+CCFLAGS =-fopenmp -O3 -std=c++17 -g -pthread -qopenmp
+# CC = g++
+# CCFLAGS = -O3 -g -fopenmp
 DEPS = my_sorting.h test_generate.h time_test.h headers.h
 OBJ =  sorting.o my_sorting.o time_test.o test_generate.o 
 

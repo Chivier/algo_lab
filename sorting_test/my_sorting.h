@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MY_SORTING_H
+#define MY_SORTING_H
 
 #include <iostream>
 #include <stdio.h>
@@ -17,3 +18,5 @@ int merge_sort_paralled(Arr &origin);
 
 int quick_sort(Arr &origin, int lb, int rb);
 int quick_sort_parralled(Arr &origin, int lb, int rb);
+
+#endif

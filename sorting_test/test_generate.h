@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TEST_GENERATE_H
+#define TEST_GENERATE_H
 
 #include <cmath>
 #include <cstdio>
@@ -63,3 +64,5 @@ public:
 
 void Generate_small_case(Test_case &test);
 void Generate_case(Test_case &test);
+
+#endif

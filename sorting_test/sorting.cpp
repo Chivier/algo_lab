@@ -28,7 +28,7 @@ int main() {
     std::cout << std::endl
               << std::endl;
 
-    //record_start_time();
+    record_start_time();
     // * Test para-bubble sort.
     puts("Paralleled bubble sort: ");
     data = test.return_case();
@@ -37,7 +37,7 @@ int main() {
         std::cout << *i << " ";
     std::cout << std::endl
               << std::endl;
-    //std::cout << record_end_time() << std::endl;
+    std::cout << record_end_time() << std::endl;
 
     return 0;
 }

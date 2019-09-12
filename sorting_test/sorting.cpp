@@ -6,25 +6,29 @@
 Test_case test;
 
 int main() {
-    puts("Origin Data: ");
-    Generate_small_case(test);
-    test.putout_small();
+    // puts("Origin Data: ");
+    // Generate_small_case(test);
+    // test.putout_small();
 
     // * Test insertion sort.
     puts("Insertion sort: ");
     std::vector<int> data = test.return_case();
     insertion_sort(data);
-    for (auto i = data.begin(); i < data.end(); ++i)
-        std::cout << *i << " ";
+    // for (auto i = data.begin(); i < data.end(); ++i)
+    //     std::cout << *i << " ";
     std::cout << std::endl
               << std::endl;
 
     // * Test bubble sort.
+
+    record_start_time();
     puts("Bubble sort:");
     data = test.return_case();
     bubble_sort(data);
-    for (auto i = data.begin(); i < data.end(); ++i)
-        std::cout << *i << " ";
+    // for (auto i = data.begin(); i < data.end(); ++i)
+    //     std::cout << *i << " ";
+    // puts("");
+    std::cout << record_end_time() << std::endl;
     std::cout << std::endl
               << std::endl;
 
@@ -33,11 +37,12 @@ int main() {
     puts("Paralleled bubble sort: ");
     data = test.return_case();
     bubble_sort_paralled(data);
-    for (auto i = data.begin(); i < data.end(); ++i)
-        std::cout << *i << " ";
+    // for (auto i = data.begin(); i < data.end(); ++i)
+    //     std::cout << *i << " ";
+    // puts("");
+    std::cout << record_end_time() << std::endl;
     std::cout << std::endl
               << std::endl;
-    std::cout << record_end_time() << std::endl;
 
     return 0;
 }

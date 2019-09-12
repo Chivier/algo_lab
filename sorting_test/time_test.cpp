@@ -3,7 +3,7 @@
 
 static int st_time, ed_time;
 
-inline unsigned long long rdtsc(void) {
+inline ULL rdtsc(void) {
     unsigned long hi = 0, lo = 0;
 
     __asm__ __volatile__("lfence;rdtsc"
@@ -12,12 +12,12 @@ inline unsigned long long rdtsc(void) {
     return (((unsigned long long)lo)) | (((unsigned long long)hi) << 32);
 }
 
-inline unsigned long long record_start_time(void) {
+inline ULL record_start_time(void) {
     st_time = rdtsc();
     return st_time;
 }
 
-inline unsigned long long record_end_time(void) {
+inline ULL record_end_time(void) {
     ed_time = rdtsc();
     return ed_time - st_time;
 }

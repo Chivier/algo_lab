@@ -23,13 +23,14 @@ int main() {
         std::cout << *i << " ";
     std::cout << std::endl;
 
-    record_start_time();
+    //record_start_time();
     // * Test para-bubble sort.
     data = test.return_case();
     bubble_sort_paralled(data);
     for (auto i = data.begin(); i < data.end(); ++i)
         std::cout << *i << " ";
-    std::cout << record_end_time() << std::endl;
+    std::cout << std::endl;
+    //std::cout << record_end_time() << std::endl;
 
     return 0;
 }

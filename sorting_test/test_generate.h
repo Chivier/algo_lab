@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TEST_GENERATE_H
+#define TEST_GENERATE_H
 
 #include <cmath>
 #include <cstdio>

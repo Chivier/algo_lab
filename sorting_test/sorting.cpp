@@ -31,20 +31,5 @@ int main() {
         std::cout << *i << " ";
     std::cout << record_end_time() << std::endl;
 
-    int nb_threads = omp_get_max_threads();
-    printf(">> omp_get_max_thread()\n>> %i\n", nb_threads);
-
-    omp_set_num_threads(4);
-    printf(">> omp_set_num_threads(4)\n");
-
-    nb_threads = omp_get_num_threads();
-    printf(">> omp_get_num_threads()\n>> %i\n", nb_threads);
-
-    int id;
-#pragma omp parallel private(id)
-    {
-        id = omp_get_thread_num();
-        printf(">> omp_get_thread_num()\n>> %i\n", id);
-    }
     return 0;
 }

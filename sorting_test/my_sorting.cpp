@@ -1,5 +1,17 @@
 #include "my_sorting.h"
 
+// * Sort Checker
+// * Input: Array
+// * Output: Whether the array is in proper sequence
+
+bool sort_check(Arr &origin) {
+    for (auto i = origin.begin() + 1; i < origin.end(); ++i) {
+        if (*i < *(i - 1))
+            return 0;
+    }
+    return 1;
+}
+
 // * Basic Bubble_Sort
 // * Input: Array origin
 // * Ouput: Whether the sort is done or not
@@ -49,6 +61,10 @@ int insertion_sort(Arr &origin) {
     return 1;
 }
 
+// * Paralleled Bubble_Sort
+// * Input: Array origin
+// * Output: Whether the sort is done or not
+
 int bubble_sort_paralled(Arr &origin) {
     bool flag = 1;
     int tag = 0;
@@ -61,14 +77,6 @@ int bubble_sort_paralled(Arr &origin) {
                 std::swap(*i, *(i + 1));
                 flag = 1;
             }
-
-            // for (auto test = origin.begin(); test < origin.end(); ++test)
-            //     std::cout << *test << " ";
-
-            // std::cout << "\n";
-            // std::cout << omp_get_thread_num() << "   ";
-            // std::cout << omp_get_num_threads() << "   ";
-            // std::cout << omp_in_parallel() << "\n";
         }
 
 #pragma omp parallel for num_threads(8) shared(flag)

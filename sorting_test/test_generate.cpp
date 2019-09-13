@@ -2,7 +2,7 @@
 
 const int SMALL_SIZE = 10;
 const int TEST_SIZE1 = 20;
-const int TEST_SIZE2 = 10000;
+const int TEST_SIZE2 = 50000;
 const int TEST_SIZE3 = 10000000;
 
 void Generate_small_case(Test_case &test) {
@@ -27,6 +27,6 @@ void Generate_case(Test_case &test, const int mod) {
     default:
         break;
     }
-    test.update_size(TEST_SIZE1);
+
     test.generate_random();
 }

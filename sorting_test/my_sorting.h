@@ -5,6 +5,8 @@
 
 typedef std::vector<int> Arr;
 
+bool sort_check(Arr &origin);
+
 int bubble_sort(Arr &origin);
 int bubble_sort_paralled(Arr &origin);
 

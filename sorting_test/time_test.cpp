@@ -1,7 +1,9 @@
 #include "time_test.h"
-#include "headers.h"
+
+using namespace std::chrono;
 
 static int st_time, ed_time;
+static clock_t sys_st_time, sys_ed_time;
 
 ULL rdtsc(void) {
     unsigned long hi = 0, lo = 0;

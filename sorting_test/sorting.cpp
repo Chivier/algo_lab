@@ -9,7 +9,7 @@ int main() {
     // puts("Origin Data: ");
     // Generate_small_case(test);
     // test.putout_small();
-    Generate_case(test, 2);
+    Generate_case(test, 1);
     //test.putout();
 
     std::cout << test.return_size() << std::endl;
@@ -26,6 +26,7 @@ int main() {
     std::chrono::duration<double> elapsed = finish - start;
     std::cout << "Elapsed time: " << elapsed.count() << " s\n";
     std::cout << "Sorting check: " << sort_check(data) ? "True" : "False";
+    sort_print(data);
     std::cout << std::endl
               << std::endl;
 
@@ -41,6 +42,7 @@ int main() {
     elapsed = finish - start;
     std::cout << "Elapsed time: " << elapsed.count() << " s\n";
     std::cout << "Sorting check: " << sort_check(data) ? "True" : "False";
+    sort_print(data);
     std::cout << std::endl
               << std::endl;
 
@@ -56,6 +58,7 @@ int main() {
     elapsed = finish - start;
     std::cout << "Elapsed time: " << elapsed.count() << " s\n";
     std::cout << "Sorting check: " << sort_check(data) ? "True" : "False";
+    sort_print(data);
     std::cout << std::endl
               << std::endl;
 
@@ -71,6 +74,7 @@ int main() {
     elapsed = finish - start;
     std::cout << "Elapsed time: " << elapsed.count() << " s\n";
     std::cout << "Sorting check: " << sort_check(data) ? "True" : "False";
+    sort_print(data);
     std::cout << std::endl
               << std::endl;
 

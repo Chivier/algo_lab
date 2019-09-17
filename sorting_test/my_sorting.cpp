@@ -180,4 +180,9 @@ int merge_sort(Arr &origin, const int st_pos, const int ed_pos) {
 // * Input: Array origin, begin postion & end position
 // * Output: Whether the sort is done or not
 int quick_sort(Arr &origin, const int st_pos, const int ed_pos) {
+    if (ed_pos - st_pos <= 0)
+        return 1;
+
+    // * Partion (better srand rand seed in the beginning of the program)
+    int random_partion =
 }

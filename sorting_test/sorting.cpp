@@ -5,7 +5,7 @@
 
 Test_case test;
 
-int main() {
+void time_test() {
     // puts("Origin Data: ");
     // Generate_small_case(test);
     // test.putout_small();
@@ -78,5 +78,24 @@ int main() {
     std::cout << std::endl
               << std::endl;
 
-    return 0;
+    return;
+}
+
+void correct_test() {
+    puts("Origin Data: ");
+    Generate_small_case(test);
+    test.putout_small();
+
+    Arr data;
+    data = test.return_case();
+
+    merge_sort(data, 0, data.size() - 1);
+
+    for (auto i = data.begin(); i < data.end(); ++i)
+        std::cout << *i << " ";
+    puts("");
+}
+
+int main() {
+    correct_test();
 }

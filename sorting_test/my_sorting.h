@@ -13,7 +13,7 @@ int bubble_sort_paralled(Arr &origin);
 
 int insertion_sort(Arr &origin);
 
-int merge_sort(Arr &origin);
+int merge_sort(Arr &origin, const int st_pos, const int ed_pos);
 int merge_sort_paralled(Arr &origin);
 
 int quick_sort(Arr &origin, int lb, int rb);

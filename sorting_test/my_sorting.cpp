@@ -103,5 +103,75 @@ int bubble_sort_paralled(Arr &origin) {
 }
 
 // * Merge_Sort
-// * Input: Array origin
+// * Input: Array origin, begin postion & end position
 // * Output: Whether the sort is done or not
+
+int merge_sort(Arr &origin, const int st_pos, const int ed_pos) {
+    if (ed_pos - st_pos <= 0)
+        return 1;
+
+    // // * check point
+    // std::cout << "Before sort" << st_pos << " , " << ed_pos << "\n";
+    // for (auto i = origin.begin(); i < origin.end(); i++) {
+    //     std::cout << *i << "  ";
+    // }
+    // puts("");
+    // puts("");
+
+    // * Divide into two parts
+    int mid_pos = (st_pos + ed_pos) >> 1;
+    merge_sort(origin, st_pos, mid_pos);
+    merge_sort(origin, mid_pos + 1, ed_pos);
+
+    // * Merge
+    Arr temp;
+    temp.clear();
+    auto l_pointer = origin.begin() + st_pos;
+    auto r_pointer = origin.begin() + mid_pos + 1;
+    const auto l_pointer_bound = origin.begin() + mid_pos;
+    const auto r_pointer_bound = origin.begin() + ed_pos;
+    // * Common merge
+    while (l_pointer <= l_pointer_bound && r_pointer <= r_pointer_bound) {
+        if (*l_pointer < *r_pointer) {
+            temp.push_back(*l_pointer);
+            l_pointer++;
+        } else {
+            temp.push_back(*r_pointer);
+            r_pointer++;
+        }
+    }
+    // * Left part special sort
+    while (l_pointer <= l_pointer_bound) {
+        temp.push_back(*l_pointer);
+        l_pointer++;
+    }
+    // * Right part special sort
+    while (r_pointer <= r_pointer_bound) {
+        temp.push_back(*r_pointer);
+        r_pointer++;
+    }
+    // * Copy back
+    auto cp_pos1 = origin.begin() + st_pos;
+    auto cp_pos2 = temp.begin();
+    while (cp_pos2 < temp.end()) {
+        *cp_pos1 = *cp_pos2;
+        cp_pos1++;
+        cp_pos2++;
+    }
+
+    // // * check point
+    // std::cout << "After sort  " << st_pos << " , " << ed_pos << "\n";
+    // for (auto i = origin.begin(); i < origin.end(); i++) {
+    //     std::cout << *i << "  ";
+    // }
+    // puts("");
+    // std::cout << "After sort temp "
+    //           << "\n";
+    // for (auto i = temp.begin(); i < temp.end(); i++) {
+    //     std::cout << *i << "  ";
+    // }
+    // puts("");
+    // puts("");
+
+    return 1;
+}

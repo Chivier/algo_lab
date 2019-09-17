@@ -175,3 +175,9 @@ int merge_sort(Arr &origin, const int st_pos, const int ed_pos) {
 
     return 1;
 }
+
+// * Quick_Sort
+// * Input: Array origin, begin postion & end position
+// * Output: Whether the sort is done or not
+int quick_sort(Arr &origin, const int st_pos, const int ed_pos) {
+}

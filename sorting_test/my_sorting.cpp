@@ -110,14 +110,6 @@ int merge_sort(Arr &origin, const int st_pos, const int ed_pos) {
     if (ed_pos - st_pos <= 0)
         return 1;
 
-    // // * check point
-    // std::cout << "Before sort" << st_pos << " , " << ed_pos << "\n";
-    // for (auto i = origin.begin(); i < origin.end(); i++) {
-    //     std::cout << *i << "  ";
-    // }
-    // puts("");
-    // puts("");
-
     // * Divide into two parts
     int mid_pos = (st_pos + ed_pos) >> 1;
     merge_sort(origin, st_pos, mid_pos);
@@ -159,20 +151,6 @@ int merge_sort(Arr &origin, const int st_pos, const int ed_pos) {
         cp_pos2++;
     }
 
-    // // * check point
-    // std::cout << "After sort  " << st_pos << " , " << ed_pos << "\n";
-    // for (auto i = origin.begin(); i < origin.end(); i++) {
-    //     std::cout << *i << "  ";
-    // }
-    // puts("");
-    // std::cout << "After sort temp "
-    //           << "\n";
-    // for (auto i = temp.begin(); i < temp.end(); i++) {
-    //     std::cout << *i << "  ";
-    // }
-    // puts("");
-    // puts("");
-
     return 1;
 }
 
@@ -180,9 +158,28 @@ int merge_sort(Arr &origin, const int st_pos, const int ed_pos) {
 // * Input: Array origin, begin postion & end position
 // * Output: Whether the sort is done or not
 int quick_sort(Arr &origin, const int st_pos, const int ed_pos) {
-    if (ed_pos - st_pos <= 0)
+    if (ed_pos <= st_pos)
         return 1;
 
     // * Partion (better srand rand seed in the beginning of the program)
-    int random_partion =
+    const int length_now = ed_pos - st_pos + 1;
+    int pivot_pos = rand() % length_now;
+    std::swap(origin[st_pos + pivot_pos], origin[st_pos]);
+
+    int pos_l = st_pos + 1;
+    int pivot = origin[st_pos];
+    for (int pos_r = st_pos + 1; pos_r <= ed_pos; ++pos_r) {
+        if (origin[pos_r] < pivot) {
+            std::swap(origin[pos_l], origin[pos_r]);
+            pos_l++;
+        }
+    }
+
+    std::swap(origin[st_pos], origin[pos_l - 1]);
+    pivot_pos = pos_l - 1;
+
+    quick_sort(origin, st_pos, pivot_pos - 1);
+    quick_sort(origin, pivot_pos + 1, ed_pos);
+
+    return 1;
 }

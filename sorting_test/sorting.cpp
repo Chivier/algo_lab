@@ -94,6 +94,14 @@ void correct_test() {
     for (auto i = data.begin(); i < data.end(); ++i)
         std::cout << *i << " ";
     puts("");
+
+    data = test.return_case();
+
+    quick_sort(data, 0, data.size() - 1);
+
+    for (auto i = data.begin(); i < data.end(); ++i)
+        std::cout << *i << " ";
+    puts("");
 }
 
 int main() {

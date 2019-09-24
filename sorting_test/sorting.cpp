@@ -97,7 +97,7 @@ void correct_test() {
 
     data = test.return_case();
 
-    quick_sort(data, 0, data.size() - 1);
+    quick_sort_stable(data, 0, data.size() - 1);
 
     for (auto i = data.begin(); i < data.end(); ++i)
         std::cout << *i << " ";

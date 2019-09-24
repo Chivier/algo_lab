@@ -157,6 +157,7 @@ int merge_sort(Arr &origin, const int st_pos, const int ed_pos) {
 // * Quick_Sort
 // * Input: Array origin, begin postion & end position
 // * Output: Whether the sort is done or not
+// * Unstable Version
 int quick_sort(Arr &origin, const int st_pos, const int ed_pos) {
     if (ed_pos <= st_pos)
         return 1;
@@ -182,4 +183,39 @@ int quick_sort(Arr &origin, const int st_pos, const int ed_pos) {
     quick_sort(origin, pivot_pos + 1, ed_pos);
 
     return 1;
+}
+
+// * Quick_Sort
+// * Input: Array origin, begin postion & end position
+// * Output: Whether the sort is done or not
+// * Stable Version
+int quick_sort_stable(Arr &origin, const int st_pos, const int ed_pos) {
+    if (ed_pos <= st_pos)
+        return 1;
+
+    // * Stable partion
+    const int length_now = ed_pos - st_pos + 1;
+    int pivot_pos = rand() % length_now;
+    int pivot = origin[pivot_pos];
+
+    int lpos = st_pos;
+    int rpos = ed_pos;
+    while (lpos < rpos) {
+        while (origin[lpos] <= pivot && lpos < rpos)
+            lpos++;
+
+        if (lpos == rpos)
+            break;
+
+        while (origin[rpos] >= pivot && lpos < rpos)
+            rpos--;
+
+        if (lpos == rpos)
+            break;
+
+        std::swap(origin[lpos], origin[rpos]);
+    }
+
+    quick_sort_stable(origin, st_pos, lpos - 1);
+    quick_sort_stable(origin, lpos + 1, ed_pos);
 }

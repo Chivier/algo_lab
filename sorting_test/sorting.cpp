@@ -105,5 +105,5 @@ void correct_test() {
 }
 
 int main() {
-    correct_test();
+    time_test();
 }

@@ -8,8 +8,8 @@ Here I mainly test some algorithms which I am interested in.
 
 - [x] Implement some sorting algorithms
 
-- [ ] Red & Black Tree implement
+- [x] Red & Black Tree implement
 
-- [ ] Parallel sorting algorithms
+- [x] Binary Search Tree
 
 - [ ] Implement basic data structure in Rust
